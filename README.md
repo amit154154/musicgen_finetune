@@ -8,8 +8,7 @@ This repository provides tools and scripts to fine-tune Meta's [MusicGen](https:
 
 ## Evaluation
 
-To evaluate the effectiveness of the fine-tuning process, we compared the generated audio against the ground truth MapleStory background music using the **Frechet Distance** metric. The Frechet Distance measures the similarity between two distributions, where a lower score indicates higher similarity.
-
+To evaluate the effectiveness of the fine-tuning process, we compared the generated audio against the ground truth MapleStory background music which has a very distinct genre.
 ### Frechet Distance Results
 
 We conducted evaluations on **150 generated audio files**, each **8 seconds** in duration. Below are the results comparing the zero-shot performance with the fine-tuned model:
