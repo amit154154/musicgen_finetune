@@ -5,9 +5,9 @@ import pytorch_lightning as pl
 import wandb
 from pytorch_lightning.loggers import WandbLogger
 import torch
-from pytorch_lightning import seed_everything  # Import for setting the seed
+from pytorch_lightning import seed_everything
 
-# Params
+# hyper params
 segmented_audio_folder = "data"
 save_recoding_dir = "123"
 Duration = 8
@@ -63,7 +63,8 @@ data_module.prepare_data()
 musicgen_module = MusicGenLightningModule(learning_rate=learning_rate,log_wandb = do_wandb,r = r)
 
 unique_conditions = data_module.unique_conditions
-print(unique_conditions)
+print(f"the prompts found are:{unique_conditions}")
+
 # Add both AudioGenerationCallback and ModelCheckpoint to the callbacks list
 callbacks = [
     AudioGenerationCallback(generate_every=generate_every, conditions=unique_conditions,save_recoding_dir = save_recoding_dir,do_wandb = do_wandb),
